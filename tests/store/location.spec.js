@@ -30,7 +30,7 @@ describe('(Internal Module) Location', () => {
 
       const locationState = { pathname: '/yup' }
       state = locationReducer(state, locationChange(locationState))
-      expect(state).to.equal(locationState)
+      expect(state).not.to.equal(locationState)
       expect(state).to.have.property('pathname', '/yup')
       state = locationReducer(state, { type: '@@@@@@@' })
       expect(state).to.equal(locationState)
